@@ -1,0 +1,62 @@
+:root {
+  --navy: #060A14;
+  --navy-2: #0D1526;
+  --navy-3: #141E35;
+  --gold: #C9A84C;
+  --gold-light: #F0D080;
+  --gold-dim: rgba(201, 168, 76, 0.15);
+  --white: #F5F0E8;
+  --grey: #8892A4;
+  --grey-dim: rgba(136, 146, 164, 0.3);
+  --card: rgba(20, 30, 53, 0.8);
+  --font-display: var(--font-cormorant), 'Georgia', serif;
+  --font-body: var(--font-dm), 'Helvetica Neue', sans-serif;
+}
+
+body.light {
+  --navy: #FAF7F2;
+  --navy-2: #F2EDE6;
+  --navy-3: #FFFFFF;
+  --white: #1A1A1A;
+  --grey: #5C5C5C;
+  --grey-dim: rgba(92, 92, 92, 0.4);
+  --card: rgba(255, 255, 255, 0.95);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--navy);
+  color: var(--white);
+  font-family: var(--font-body);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 50% at 20% 20%, rgba(201,168,76,0.04) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 80%, rgba(201,168,76,0.03) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(201,168,76,0); }
+  50%       { box-shadow: 0 0 20px 4px rgba(201,168,76,0.2); }
+}
